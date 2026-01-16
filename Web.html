@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osasun Kalkulagailua - Webgune Ofiziala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOAK / ESTILOS GENERALES --- */
+        :root {
+            --primary-color: #00b894; /* Verde Menta Moderno */
+            --primary-dark: #00a383;
+            --secondary-color: #2d3436; /* Gris Oscuro */
+            --accent-color: #fdcb6e; /* Amarillo Suave */
+            --bg-color: #f0f2f5;
+            --text-color: #636e72;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- HERO SECTION (Cabecera Principal) --- */
+        header {
+            background: linear-gradient(135deg, #00b894 0%, #0984e3 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            margin-top: 10px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            background-color: var(--white);
+            color: var(--primary-dark);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background-color: #f8f8f8;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 40px; /* Sube un poco sobre el header */
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* --- TARJETAS (Cards) --- */
+        section {
+            background: var(--white);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px); /* Efecto elevación */
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        /* --- DATA GRID (Para los datos requeridos) --- */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .data-card {
+            background: #f9fbfd;
+            border: 1px solid #e1e8ed;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .data-card strong {
+            display: block;
+            color: var(--primary-dark);
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        /* --- INFO BOX --- */
+        .info-box {
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            padding: 20px;
+            border-left: 5px solid #00bcd4;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #006064;
+        }
+
+        /* --- VIDEO --- */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- PREMIUM BANNER --- */
+        .premium-banner {
+            background: linear-gradient(45deg, #fdcb6e, #fab1a0);
+            color: #2d3436;
+            padding: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 10px 20px rgba(253, 203, 110, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #b2bec3;
+            font-size: 0.9em;
+            background-color: #2d3436;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍏 Metabolismo Kalkulagailua</h1>
+        <p class="subtitle">Zaindu zure osasuna, ezagutu zure gorputza</p>
+        <a href="#tutorial" class="cta-button">Ikusi Nola Dabil</a>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>Zer egiten du aplikazio honek?</h2>
+            <p>Aplikazio honek zure <strong>Oinarrizko Tasa Metabolikoa (OTM)</strong> kalkulatzen laguntzen dizu. Atsedenean zure gorputzak funtzionatzeko zenbat kaloria behar dituen ulertzeko ezinbesteko tresna da.</p>
+            <div class="info-box">
+                <p><strong>💡 Ba al zenekien?</strong> Zure metabolismoa ezagutzea dieta osasuntsu bat planifikatzeko lehen urratsa da, pisua mantentzeko, giharrak irabazteko edo pisua galtzeko.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Hasi aurretik: Prestatu zure datuak</h2>
+            <p>Kalkulagailuak doitasunez funtziona dezan, informazio hau sartu beharko duzu aplikazioan:</p>
+            
+            <div class="data-grid">
+                <div class="data-card">
+                    <strong>⚖️ Pisua</strong>
+                    Kilogramotan<br>(adib. 65.5)
+                </div>
+                <div class="data-card">
+                    <strong>📏 Altuera</strong>
+                    Zentimetrotan<br>(adib. 170)
+                </div>
+                <div class="data-card">
+                    <strong>🎂 Adina</strong>
+                    Urtetan<br>(zenbaki osoa)
+                </div>
+                <div class="data-card">
+                    <strong>🚻 Generoa</strong>
+                    Gizona / Emakumea<br>(aukeratu)
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 20px; font-size: 0.9em; color: #888;">
+                <em>⚠️ Oharra: Gogoratu hamartarretarako <strong>PUNTUA</strong> erabiltzea (adib: 65.5).</em>
+            </p>
+        </section>
+
+        <section id="tutorial">
+            <h2>🎥 Bideo-tutoriala: Ikasi App-a erabiltzen</h2>
+            <p>Hemen duzu pantailatik nola mugitu, pribatutasun-politika onartu eta kalkulua nola egin ikusteko erakustaldi azkar bat. Link-a:  https://youtu.be/Pj6SHuYAJ00?si=RA9lreDKVrptKTXx</p>
+            
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://youtu.be/Pj6SHuYAJ00?si=RA9lreDKVrptKTXx" title="App Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <div class="premium-banner">
+            ⭐ BERRIA! Premium Bertsioa ⭐<br>
+            <span style="font-weight: normal; font-size: 0.9em;">Orain iragarkiak kentzeko erosketa dezakezu app barruan!</span>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Hezkuntza Proiektua - Eskola Simulazioa</p>
+        <p>© 2024 Osasun Kalkulagailua App - Eskubide guztiak erreserbatuta</p>
+    </footer>
+
+</body>
+</html>
